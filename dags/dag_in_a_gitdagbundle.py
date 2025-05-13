@@ -29,11 +29,11 @@ def dag_in_a_gitdagbundle():
 
     my_task()
 
-    @task
-    def my_task2():
-        pass
+    # @task
+    # def my_task2():
+    #     pass
 
-    my_task2()
+    # my_task2()
 
     @task
     def my_task3():
