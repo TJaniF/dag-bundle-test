@@ -22,18 +22,18 @@ from airflow.sdk import dag, task
 
 
 @dag
-def example_simplest_dag():
+def dag_in_a_gitdagbundle():
     @task
     def my_task():
         print("Hello")
 
     my_task()
 
-    # @task
-    # def my_task2():
-    #     pass
+    @task
+    def my_task2():
+        pass
 
-    # my_task2()
+    my_task2()
 
     @task
     def my_task3():
@@ -42,4 +42,4 @@ def example_simplest_dag():
     my_task3()
 
 
-example_simplest_dag()
+dag_in_a_gitdagbundle()
