@@ -21,7 +21,9 @@ from __future__ import annotations
 from airflow.sdk import dag, task
 
 
-@dag
+@dag(
+    schedule="@daily"
+)
 def dag_in_a_gitdagbundle():
     @task
     def my_task():
