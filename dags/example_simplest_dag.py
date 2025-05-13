@@ -25,7 +25,7 @@ from airflow.sdk import dag, task
 def example_simplest_dag():
     @task
     def my_task():
-        pass
+        print("Hello")
 
     my_task()
 
