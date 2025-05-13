@@ -22,7 +22,8 @@ from airflow.sdk import dag, task
 
 
 @dag(
-    schedule="@daily"
+    schedule="@daily",
+    tags=["gitdagbundle_example"]
 )
 def dag_in_a_gitdagbundle():
     @task
