@@ -27,10 +27,10 @@ from airflow.sdk import dag, task
 )
 def dag_in_a_gitdagbundle():
     @task
-    def my_task_changed():
+    def my_task():
         print("Hello world!!")
 
-    my_task_changed()
+    my_task()
 
     @task
     def my_task2():
