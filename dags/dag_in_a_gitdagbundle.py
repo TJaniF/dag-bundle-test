@@ -30,7 +30,7 @@ def dag_in_a_gitdagbundle():
     def my_task_changed():
         print("Hello world!!")
 
-    my_task()
+    my_task_changed()
 
     @task
     def my_task2():
