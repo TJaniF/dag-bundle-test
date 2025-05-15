@@ -38,17 +38,7 @@ def dag_in_a_gitdagbundle():
 
     my_task2()
 
-    @task
-    def my_task3():
-        pass
 
-    my_task3()
-
-    @task
-    def my_task4():
-        pass
-
-    my_task4()
 
 
 dag_in_a_gitdagbundle()
