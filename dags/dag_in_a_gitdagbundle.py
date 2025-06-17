@@ -43,6 +43,12 @@ def dag_in_a_gitdagbundle():
     def my_task_added():
         pass
 
+    @task 
+    def my_second_added_task():
+        pass
+
+    my_second_added_task()
+
 
     my_task_added()
 
