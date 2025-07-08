@@ -27,30 +27,17 @@ from airflow.sdk import dag, task
 )
 def dag_in_a_gitdagbundle():
     @task
-    def my_task():
-        print("Hello world!!")
+    def my_task1():
+        return {"a":23, "b":19}
 
-    my_task()
+    _my_task_1 = my_task1()
 
     @task
-    def my_task2():
-        pass
+    def my_task2(my_dict):
+        print(my_dict)
 
-    my_task2()
+    my_task2(_my_task_1)
 
-
-    @task 
-    def my_task_added():
-        pass
-
-    @task 
-    def my_second_added_task():
-        pass
-
-    my_second_added_task()
-
-
-    my_task_added()
 
 
 
