@@ -40,6 +40,13 @@ def dag_in_a_gitdagbundle():
     my_task2(_my_task_1)
 
 
+    @task 
+    def my_task3():
+        print("hello")
+
+    my_task3()
+
+
 
 
 
