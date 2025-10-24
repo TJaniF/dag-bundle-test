@@ -43,7 +43,7 @@ def dag_in_a_gitdagbundle():
     @task 
     def my_task3():
         from airflow.sdk import Variable
-        my_var = Varaiable.get("my_var")
+        my_var = Variable.get("my_var")
         print(my_var)
 
     my_task3()
