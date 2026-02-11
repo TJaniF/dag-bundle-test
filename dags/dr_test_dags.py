@@ -7,19 +7,6 @@ from datetime import datetime
 )
 def start_dag():
 
-    @task 
-    def upstream_dtm():
-        import random
-        return [random.randint(1, 100) for _ in range(random.randint(1, 10))]
-
-    _upstream_dtm = upstream_dtm() 
-
-    @task 
-    def transform_dtm(num):
-        return num ** 2
-
-    _transform_dtm = transform_dtm.expand(num=_upstream_dtm)
-
     for i in range(30):
 
         @task(task_id=f"parallel_task_{i}")
@@ -27,7 +14,7 @@ def start_dag():
             import time
             import random
             time.sleep(random.randint(1, i))
-            return f"Hello World {i}"
+
 
         _parallel_task = parallel_task()
 
@@ -41,7 +28,7 @@ def start_dag():
             import time
             import random
             time.sleep(random.randint(1, i))
-            return f"Hello World {i}"
+
 
         _sequential_task = sequential_task()
         sequential_task_list.append(_sequential_task)
@@ -49,7 +36,8 @@ def start_dag():
 
     @task(outlets=[Asset(name="output_asset1")])
     def downstream_task():
-        return "Hello World"
+        pass
+
 
     chain(*sequential_task_list, downstream_task())
 
@@ -65,7 +53,8 @@ def downstream_dag():
     def d1():
         import time
         time.sleep(10)
-        return "Hello World"
+        pass
+
 
     d1()
 
@@ -78,7 +67,7 @@ downstream_dag()
 def downstream_dag2():
     @task(outlets=[Asset(name="output_asset3")])
     def d2():
-        return "Hello World"
+        pass
 
     d2()
 
@@ -91,7 +80,7 @@ downstream_dag2()
 def downstream_dag3():
     @task(outlets=[Asset(name="output_asset4")])
     def d3():
-        return "Hello World"
+        pass
 
     d3()
 
@@ -103,7 +92,7 @@ downstream_dag3()
 def downstream_dag4():
     @task(outlets=[Asset(name="output_asset5")])
     def d4():
-        return "Hello World"
+        pass
 
     d4()
 
@@ -116,7 +105,7 @@ downstream_dag4()
 def downstream_dag5():
     @task(outlets=[Asset(name="output_asset6")])
     def d5():
-        return "Hello World"
+        pass
 
     d5()
 
