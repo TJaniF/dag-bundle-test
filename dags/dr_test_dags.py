@@ -1,4 +1,4 @@
-from airflow.sdk import dag, task, chain, Asset
+""" from airflow.sdk import dag, task, chain, Asset
 from datetime import datetime
 
 @dag(
@@ -109,4 +109,4 @@ def downstream_dag5():
 
     d5()
 
-downstream_dag5()
+downstream_dag5() """
