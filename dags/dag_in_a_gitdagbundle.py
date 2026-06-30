@@ -1,6 +1,6 @@
 from airflow.sdk import dag, task 
 
-@dag(schedule="@daily", rerun_with_latest_version=False)
+@dag(schedule="@daily",) #rerun_with_latest_version=False)
 def rerun_latest_bundle_version_dag():
 
     @task 
